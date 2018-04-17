@@ -12,10 +12,23 @@ package tag;
 public class Player {
     private String name = "Player";
     private int health = 100;
+    private int experience = 0; 
     private Room currentRoom;
 
     
+    
+    public int getExperience() {
+        return experience;
+    }
 
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+    
+    
+    
+    
+    
     public Room getCurrentRoom() {
         return currentRoom;
     }

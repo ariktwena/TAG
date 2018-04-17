@@ -15,7 +15,7 @@ public class Controller {
     private ArrayList<Room> rooms = new ArrayList();
     
     
-    public Room mapGen() {
+    public Room mapGen(Room r) {
         Room A2 = new Room("A2 - rope room","You walk into a `seemingly´ empty room.");
         Room A3 = new Room("A3 - Stone room","You enter a small room that is only lit up by a still burning torch that lies on the ground. Next to it is a small rock that is a throwable size.");
         Room A4 = new Room("A4 - Startroom","There is a small hole at the top of the cave. It lightens up the room which shows you 3 paths.");
@@ -106,7 +106,12 @@ public class Controller {
         
         C4.setNorth(B4);
         C4.setWest(C3);
-        C4.setSouth(D4);
+       
+        if(!r.scroll){
+        } 
+        else {    
+            C4.setSouth(D4);
+        }
         C4.setEast(C5);
         
         C5.setNorth(B5);
@@ -116,7 +121,12 @@ public class Controller {
         
         C6.setNorth(B6);
         C6.setWest(C5);
-        C6.setSouth(D6);
+        if(!r.axe){
+        } 
+        else {    
+            C6.setSouth(D6);
+        }
+        
         
         D2.setSouth(E2);
         D2.setEast(D3);
@@ -173,7 +183,7 @@ public class Controller {
 //    public void move(Player p, TUI t, Controller c) {
 //        while (true){
 //            t.getRoomDescription(p);
-//            ArrayList<String> movements = c.getMoveOptions(p);
+//            ArrayList<String> movements = getMoveOptions(p);
 //            int i = t.getPlayerInput(movements);
 //            
 //            switch (i) {
