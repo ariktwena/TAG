@@ -13,7 +13,7 @@ public class Tools extends Item {
     
     private int experience;
 
-    public Tools(int experience, String itemName, String itemDescripton) {
+    public Tools( String itemName, String itemDescripton, int experience) {
         super(itemName, itemDescripton);
         this.experience = experience;
     }

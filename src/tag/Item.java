@@ -5,6 +5,8 @@
  */
 package tag;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Tweny
@@ -13,6 +15,10 @@ public class Item {
     
     String itemName;
     String itemDescripton;
+    
+    private ArrayList<Item> itemList = new ArrayList();
+    
+    
 
     public Item(String itemName, String itemDescripton) {
         this.itemName = itemName;
@@ -40,7 +46,8 @@ public class Item {
     
     //Item skal evt ind i et arraylist (inventory)
     public void use(Player player){
-        
+      
+       
     }
     
 }

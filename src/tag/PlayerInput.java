@@ -40,6 +40,13 @@ public class PlayerInput {
         //System.out.println("You have entered a new room!");
     }
      
+     
+     // Igen startrum
+    public String noRoom(){
+        String noRoom = "There is no startroom";
+        return noRoom;  
+    }
+     
 
     
      // Spiller skrive det tal på den vej spilleren vil gå
@@ -65,31 +72,20 @@ public class PlayerInput {
         }
     }
      
-     
-     
-     
-     
-    
-//    public int getPlayerInput(ArrayList<String> a) {
-//
-//        while (true) {
-//            for (int i = 0; i < a.size(); i++) {
-//                System.out.println(a.get(i));
-//            }
-//            System.out.println("Where do you want to go?");
-//
-//            String x = sc.next();
-//            
-//            for (int i = 0; i < a.size(); i++) {
-//                if (a.get(i).substring("Press ".length(), "Press ".length()+1).equals(x)) {
-//                    int c = Integer.parseInt(x);
-//                    return c;
-//                    
-//                } 
-//                
-//            }
-//            System.out.println("Please choose the right option");
-//        }
-//    } 
+
+    void playerMadePickUp(String itemName) {
+        switch (itemName) {
+            case "Stone":
+                System.out.println("You have picked up at stone");
+                break;
+            case "Rope":
+                System.out.println("You have picked up a rope");
+                break;
+        }
+    }
+
+    void printBackpack(String backpacItems) {
+        System.out.println(backpacItems);
+    }
      
 }

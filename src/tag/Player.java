@@ -5,25 +5,53 @@
  */
 package tag;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Tweny
  */
 public class Player {
+
     private String name;
     private int health;
-    private int experience; 
+    private int experience;
     private Room currentRoom;
-    
-    
+
+    private ArrayList<Item> backpack = new ArrayList();
+
     // Adgang til lukkede rum når de er true
     private boolean scroll = false;
     private boolean axe = false;
+    private boolean chest = false;
+    private boolean key = false;
+    private boolean sword = false;
+    private boolean rope = false;
+    private boolean stone = false;
 
     public Player(String name, int health, int experience) {
         this.name = name;
         this.health = health;
         this.experience = experience;
+    }
+
+    public String getBackpack() {
+             String backpackItems = "";
+        if (backpack.size() > 0) {
+            for (int i = 0; i < backpack.size(); i++) {
+                backpackItems = backpackItems + backpack.get(i).itemName + "\n";
+            }
+        }
+        else {
+                backpackItems = backpackItems + "Backpack is empty! \n";
+            }
+
+        return backpackItems;
+        
+    }
+
+    public void setBackpack(ArrayList<Item> backpack) {
+        this.backpack = backpack;
     }
 
     public String getName() {
@@ -73,6 +101,51 @@ public class Player {
     public void setAxe(boolean axe) {
         this.axe = axe;
     }
-    
+
+    public boolean isChest() {
+        return chest;
+    }
+
+    public void setChest(boolean chest) {
+        this.chest = chest;
+    }
+
+    public boolean isKey() {
+        return key;
+    }
+
+    public void setKey(boolean key) {
+        this.key = key;
+    }
+
+    public boolean isSword() {
+        return sword;
+    }
+
+    public void setSword(boolean sword) {
+        this.sword = sword;
+    }
+
+    public boolean isRope() {
+        return rope;
+    }
+
+    public void setRope(boolean rope) {
+        this.rope = rope;
+    }
+
+    public boolean isStone() {
+        return stone;
+    }
+
+    public void setStone(boolean stone) {
+        this.stone = stone;
+    }
+
+    public void addItemToBackback(Item item) {
+        backpack.add(item);
+    }
+
+  
 
 }
