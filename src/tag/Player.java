@@ -28,6 +28,8 @@ public class Player {
     private boolean sword = false;
     private boolean rope = false;
     private boolean stone = false;
+    
+    private Item [] hand = new Item[1]; //????
 
     public Player(String name, int health, int experience) {
         this.name = name;
@@ -35,7 +37,7 @@ public class Player {
         this.experience = experience;
     }
 
-    public String getBackpack() {
+    public String getBackpackItems() {
              String backpackItems = "";
         if (backpack.size() > 0) {
             for (int i = 0; i < backpack.size(); i++) {
@@ -49,6 +51,12 @@ public class Player {
         return backpackItems;
         
     }
+
+    public ArrayList<Item> getBackpack() {
+        return backpack;
+    }
+    
+    
 
     public void setBackpack(ArrayList<Item> backpack) {
         this.backpack = backpack;

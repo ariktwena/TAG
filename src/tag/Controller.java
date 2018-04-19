@@ -21,7 +21,7 @@ public class Controller {
     Item item;
 
     // Items i spillet
-    Item Scroll = new Item("Scroll", "Magic scroll"); //??? Skal det ind i en metode
+    Item Scroll = new Item("Scroll", "Magic scroll"); //Skal uddybes
     Item Axe = new Item("Axe", "Hard Axe");
     Item Chest = new Item("Chest", "Big chest");
     Item Stone = new Item("Stone", "Big Stone");
@@ -118,10 +118,9 @@ public class Controller {
         C4.setNorth(B4);
         C4.setWest(C3);
         // Spiller kan kun komme igennem hvis de har en Scroll
-        player.isScroll();
-//        if(player.isScroll() == true){
-//        C4.setSouth(D4);
-//        }
+        if (player.isScroll() == true) {
+            C4.setSouth(D4);
+        }
         C4.setEast(C5);
 
         C5.setNorth(B5);
@@ -272,11 +271,13 @@ public class Controller {
         }
         if (player.getCurrentRoom().getItem() != null) {
             movements.add("Press 5 to pick up item");
-//            player.addItemToBackback(player.getCurrentRoom().getItem());
-//            playerInput.PlayerMadePickUp(player.getCurrentRoom().getItem().getItemName());
-//            player.getCurrentRoom().clearItem();
         }
+
         movements.add("Press 6 to to see backpack items");
+
+//        if (player.getBackpack().size() > 0) {
+//            movements.add("Press 7 equip item");
+//        }
         return movements;
     }
 
@@ -323,11 +324,24 @@ public class Controller {
                 player.getCurrentRoom().clearItem();
                 break;
             case 6:
-                String backpacItems = player.getBackpack();
+                String backpacItems = player.getBackpackItems();
                 playerInput.printBackpack(backpacItems);
-                
                 break;
+//            case 7:
+//                
+//                break;
         }
     }
+        
+//        public ArrayList<String> getEquipOptions(Player player) {
+//        ArrayList<String> getEquipOptions = new ArrayList();
+//        int x = 1;
+//            for (int i = 0; i < player.getBackpack().size(); i++) {
+//                getEquipOptions.add("Press " + x + " equipe " + player.getBackpack().get(i).getItemName()); 
+//                x++;
+//            }
+//        return getEquipOptions;
+//    }
 
-}
+    }
+
