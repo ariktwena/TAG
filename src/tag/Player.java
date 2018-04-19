@@ -10,13 +10,38 @@ package tag;
  * @author Tweny
  */
 public class Player {
-    private String name = "Player";
-    private int health = 100;
-    private int experience = 0; 
+    private String name;
+    private int health;
+    private int experience; 
     private Room currentRoom;
+    
+    
+    // Adgang til lukkede rum når de er true
+    private boolean scroll = false;
+    private boolean axe = false;
 
-    
-    
+    public Player(String name, int health, int experience) {
+        this.name = name;
+        this.health = health;
+        this.experience = experience;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
     public int getExperience() {
         return experience;
     }
@@ -24,11 +49,7 @@ public class Player {
     public void setExperience(int experience) {
         this.experience = experience;
     }
-    
-    
-    
-    
-    
+
     public Room getCurrentRoom() {
         return currentRoom;
     }
@@ -37,23 +58,21 @@ public class Player {
         this.currentRoom = currentRoom;
     }
 
-    public Player(Room currentRoom) {
-        this.currentRoom = currentRoom;
-        
+    public boolean isScroll() {
+        return scroll;
     }
-    public Player() {
-        
+
+    public void setScroll(boolean scroll) {
+        this.scroll = scroll;
+    }
+
+    public boolean isAxe() {
+        return axe;
+    }
+
+    public void setAxe(boolean axe) {
+        this.axe = axe;
     }
     
-    
-    
-    public int getHealth() {
-        return health;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setHealth(int health) {
-        this.health = health;
-    }
+
 }

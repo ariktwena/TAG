@@ -17,38 +17,14 @@ public class Room {
     private Room west;
     private Room east;
     
-    private boolean scroll = false;
-    private boolean axe = false;
+//    private boolean scroll = false;
+//    private boolean axe = false;
     
     Item item;
 
     
     
-    public Item getItem() {
-        return item;
-    }
 
-    public void setItem(Item item) {
-        this.item = item;
-    }
-    
-    
-
-    public boolean isScroll() {
-        return scroll;
-    }
-
-    public void setScroll(boolean scroll) {
-        this.scroll = scroll;
-    }
-
-    public boolean isAxe() {
-        return axe;
-    }
-
-    public void setAxe(boolean axe) {
-        this.axe = axe;
-    }
     
     
 
@@ -86,4 +62,29 @@ public class Room {
     public String getDescription() {
         return description;
     }
+    
+    
+        public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    } 
+
+//    public boolean isScroll() {
+//        return scroll;
+//    }
+//
+//    public void setScroll(boolean scroll) {
+//        this.scroll = scroll;
+//    }
+//
+//    public boolean isAxe() {
+//        return axe;
+//    }
+//
+//    public void setAxe(boolean axe) {
+//        this.axe = axe;
+//    }
 }

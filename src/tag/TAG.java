@@ -12,14 +12,9 @@ package tag;
 public class TAG {
 
     
-    public static void main(String[] args) {
-        Controller c = new Controller();
-        TUI tui = new TUI();
-        Room startroom = c.mapGen();
-        Player p = c.playerGen(startroom);
-        tui.gameStart(p);
-        //c.move(p, tui, c);   
-        c.askUser(p, tui);
+    public static void main(String[] args) throws InterruptedException {
+        Controller controller = new Controller();
+        controller.start();
     }
     
 }

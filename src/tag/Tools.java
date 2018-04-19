@@ -18,9 +18,9 @@ public class Tools extends Item {
         this.experience = experience;
     }
     
-    
-    public void incExperience(Player p){
-        p.setExperience(experience);
+    // Forøger spiller erfaring 
+    public void incExperience(Player player){
+        player.setExperience(experience);
     }
 
     public int getExperience() {
@@ -47,8 +47,9 @@ public class Tools extends Item {
         this.itemDescripton = itemDescripton;
     }
 
-    public void use(Player p){
-        p.setExperience(experience);
+    // Hvad der sker når en spiller bruger et tool
+    public void use(Player player){
+        player.setExperience(experience);
     }
    
    

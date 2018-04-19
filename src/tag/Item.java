@@ -38,7 +38,8 @@ public class Item {
     }
     
     
-    public void use(Player p){
+    //Item skal evt ind i et arraylist (inventory)
+    public void use(Player player){
         
     }
     
