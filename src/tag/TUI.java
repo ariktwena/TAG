@@ -45,53 +45,66 @@ public class TUI {
         System.out.println(noRoom);
     }
 
-     void whereToGo() {
+    void whereToGo() {
         System.out.println("Where do you want to go?");
     }
+
     void chooseOtherOption() {
         System.out.println("Please choose the right option");
     }
 
-    
     void printBackpack(String backpacItems) {
         System.out.println(backpacItems);
     }
-    
+
     void stone() {
         System.out.println("You have picked up a stone");
     }
+
     void rope() {
         System.out.println("You have picked up a rope");
     }
+
     void scroll() {
         System.out.println("You have picked up a scroll");
     }
+
     void key() {
         System.out.println("You have picked up a rope");
     }
+
     void chest() {
         System.out.println("You have opend a chest");
     }
+
     void sword() {
         System.out.println("You have picked up a sword");
     }
+
     void axe() {
         System.out.println("You have picked up an Axe");
     }
-    
+
     void printName(String name) {
         System.out.print(name);
     }
-    
-     void printDescription(String description) {
+
+    void printDescription(String description) {
         System.out.print(description);
     }
-     
-     public String startRoomName(){ // Den skal normalt have en variable (String startRoomName){
-         String startRoomName = "A4";
-         return startRoomName;
-     }
-    
+
+    public String startRoomName() { // Den skal normalt have en variable (String startRoomName){
+        String startRoomName = "A4";
+        return startRoomName;
+    }
+
+    void printArray(String arrayList) {
+        System.out.println(arrayList);
+    }
+
+    void whatToUse() {
+        System.out.println("What do you want to use?");
+    }
    
     
 

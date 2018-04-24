@@ -26,8 +26,13 @@ public class Room {
     private boolean sword = false;
     private boolean rope = false;
     private boolean stone = false;
+    
+    //    //Fjender bekæmpet
+    private boolean bossNotDefeted = true;
+    private boolean miniBossNotDefeted = true;
 
     Item item;
+    Enemy enemy;
 
     public Room(String roomName, String description) {
         this.roomName = roomName;
@@ -142,4 +147,31 @@ public class Room {
         this.stone = stone;
     }
 
+    public Enemy getEnemy() {
+        return enemy;
+    }
+
+    public void setEnemy(Enemy enemy) {
+        this.enemy = enemy;
+    }
+
+    public boolean isBossNotDefeted() {
+        return bossNotDefeted;
+    }
+
+    public void setBossNotDefeted(boolean bossNotDefeted) {
+        this.bossNotDefeted = bossNotDefeted;
+    }
+
+    public boolean isMiniBossNotDefeted() {
+        return miniBossNotDefeted;
+    }
+
+    public void setMiniBossNotDefeted(boolean miniBossNotDefeted) {
+        this.miniBossNotDefeted = miniBossNotDefeted;
+    }
+    
+    
+
+    
 }
