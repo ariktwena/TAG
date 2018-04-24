@@ -137,7 +137,7 @@ public class Labyrinth {
         C4.setNorth(B4);
         C4.setWest(C3);
          //Spiller kan kun komme igennem hvis de har en Scroll
-        if (C4.isScroll() == true) {
+        if (Room.scroll == true) {
             C4.setSouth(D4);
         }
         C4.setEast(C5);
@@ -252,5 +252,7 @@ public ArrayList<Room> roomList(){
         }
         return null;
     }
+    
+  
 
 }

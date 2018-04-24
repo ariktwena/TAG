@@ -105,6 +105,12 @@ public class TUI {
     void whatToUse() {
         System.out.println("What do you want to use?");
     }
+    
+        void printBackpackUseOptions(ArrayList<String> backpacItems) {
+            for (String backpacItem : backpacItems) {
+                System.out.println(backpacItem);
+            }
+    }
    
     
 

@@ -172,6 +172,7 @@ public class Controller {
                 break;
             case 7:
                 ArrayList<String> itemsInBackPack = getBackPackItems(player.getBackpack());
+                tui.printBackpackUseOptions(itemsInBackPack);
                 tui.whatToUse();
                 String itemOption = tui.playerInput();
                 String itemName = itemListEqualPlayerInput(itemsInBackPack, itemOption);
@@ -190,14 +191,14 @@ public class Controller {
 //        return getEquipOptions;
 //    }
     // Arraylist med de mulige veje man kan bevæge sig i spillet i et givent rum
-    public ArrayList<String> getBackPackItems(ArrayList backPackItems) {
+    public ArrayList<String> getBackPackItems(ArrayList Backpack) {
         ArrayList<String> itemsInBackPack = new ArrayList();
         int x = 1;
         for (int i = 0; i < player.getBackpack().size(); i++) {
-            itemsInBackPack.add("Press " + x + " to use " + player.getBackpack().get(i).getItemName() + "\n");
+            itemsInBackPack.add("Press " + x + " to use " + player.getBackpack().get(i).getItemName());
             x++;
         }
-        itemsInBackPack.add("Press 9" + " to use nothing and continue.\n");
+        itemsInBackPack.add("Press 9" + " to use nothing and continue.");
         return itemsInBackPack;
     }
 
@@ -207,9 +208,8 @@ public class Controller {
         for (int i = 0; i < itemsInBackPack.size(); i++) {
             if (itemOption.equals("9")) {
                 return itemName = "Exit";
-            }
-            else if (itemsInBackPack.get(i).substring("Press ".length(), "Press ".length() + 1).equals(itemOption)) {
-                itemName = player.getBackpack().get(i+1).getItemName();
+            } else if (itemsInBackPack.get(i).substring("Press ".length(), "Press ".length() + 1).equals(itemOption)) {
+                itemName = player.getBackpack().get(i).getItemName();
                 return itemName;
             }
         }
@@ -220,7 +220,10 @@ public class Controller {
     public void itemControl(String itemName) throws InterruptedException {
         switch (itemName) {
             case "Scroll":
-                labyrinth.room.setScroll(true);
+                // Sætte scroll til true
+
+                Room.scroll = true;
+
                 break;
             case "Axe":
 //                player.setCurrentRoom(player.getCurrentRoom().getNorth());
@@ -231,7 +234,7 @@ public class Controller {
 //                }
                 break;
             case "Exit":
-                
+
                 break;
 
         }

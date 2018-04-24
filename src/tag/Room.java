@@ -19,7 +19,7 @@ public class Room {
     private Room east;
 
 // Adgang til lukkede rum når de er true
-    private boolean scroll = false;
+    public static boolean scroll = false;
     private boolean axe = false;
     private boolean chest = false;
     private boolean key = false;
