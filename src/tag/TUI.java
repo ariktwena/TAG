@@ -14,60 +14,85 @@ import java.util.Scanner;
  */
 public class TUI {
 
-    Scanner sc = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
 
-    public void gameStart(Player p) {
-        System.out.println("Velkommen " + p.getName());
+    //Spiller kan skrive indput som fx navn
+    public String playerInput() {
+        System.out.print("> ");
+        String input = scanner.next();
+        return input;
     }
 
-    public void getRoomDescription(Player p) {
-        String name = p.getCurrentRoom().getRoomName();
-        String desc = p.getCurrentRoom().getDescription();
-        System.out.println("Roomname: " + name + "\n" + desc);
-        
+    // Spiller kan skrive sit navn
+    public String nameInput() throws InterruptedException {
+        System.out.print("\nWhat is your name? ");
+        String name = scanner.next();
+        System.out.println("\nWelcome " + name + " to the text adventure of Arkham Asylum!");
+        Thread.sleep(1000);
+        return name;
     }
 
-//    public int getPlayerInput(ArrayList<String> a){
-//        
-//        for (int i = 0; i < a.size(); i++) {
-//            System.out.println(a.get(i)); 
-//        }
-//        System.out.println("Where do you want to go?");
-//        try {
-//            int i = sc.nextInt();
-//            return i;
-//        }
-//        catch(InputMismatchException exception){
-//            System.out.println("This is not an Integer");
-//            break;
-//        }
-//        
-////        if (i < 1 || i > 4) {
-////            System.out.println("Please press a right option.");
-////        }
-////        else if ()
-//        return 0;
-//    }
-    public int getPlayerInput(ArrayList<String> a) {
-
-        while (true) {
-            for (int i = 0; i < a.size(); i++) {
-                System.out.println(a.get(i));
-            }
-            System.out.println("Where do you want to go?");
-
-            String x = sc.next();
-            
-            for (int i = 0; i < a.size(); i++) {
-                if (a.get(i).substring("Press ".length(), "Press ".length()+1).equals(x)) {
-                    int c = Integer.parseInt(x);
-                    return c;
-                    
-                } 
-                
-            }
-            System.out.println("Please choose the right option");
-        }
+    // Walk forsinkelse
+    public void transitText() throws InterruptedException {
+        System.out.println("Walking....");
+        Thread.sleep(1000);
+        //System.out.println("You have entered a new room!");
     }
+
+    // Igen startrum
+    public void noRoom() {
+        String noRoom = "There is no startroom";
+        System.out.println(noRoom);
+    }
+
+     void whereToGo() {
+        System.out.println("Where do you want to go?");
+    }
+    void chooseOtherOption() {
+        System.out.println("Please choose the right option");
+    }
+
+    
+    void printBackpack(String backpacItems) {
+        System.out.println(backpacItems);
+    }
+    
+    void stone() {
+        System.out.println("You have picked up a stone");
+    }
+    void rope() {
+        System.out.println("You have picked up a rope");
+    }
+    void scroll() {
+        System.out.println("You have picked up a scroll");
+    }
+    void key() {
+        System.out.println("You have picked up a rope");
+    }
+    void chest() {
+        System.out.println("You have opend a chest");
+    }
+    void sword() {
+        System.out.println("You have picked up a sword");
+    }
+    void axe() {
+        System.out.println("You have picked up an Axe");
+    }
+    
+    void printName(String name) {
+        System.out.print(name);
+    }
+    
+     void printDescription(String description) {
+        System.out.print(description);
+    }
+     
+     public String startRoomName(){ // Den skal normalt have en variable (String startRoomName){
+         String startRoomName = "A4";
+         return startRoomName;
+     }
+    
+   
+    
 
 }

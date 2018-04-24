@@ -18,8 +18,15 @@ public class Room {
     private Room west;
     private Room east;
 
-//    private boolean scroll = false;
-//    private boolean axe = false;
+// Adgang til lukkede rum når de er true
+    private boolean scroll = false;
+    private boolean axe = false;
+    private boolean chest = false;
+    private boolean key = false;
+    private boolean sword = false;
+    private boolean rope = false;
+    private boolean stone = false;
+
     Item item;
 
     public Room(String roomName, String description) {
@@ -74,24 +81,65 @@ public class Room {
     public void setItem(Item item) {
         this.item = item;
     }
-    
-    public void clearItem(){
+
+    public void clearItem() {
         item = null;
     }
 
-//    public boolean isScroll() {
-//        return scroll;
-//    }
-//
-//    public void setScroll(boolean scroll) {
-//        this.scroll = scroll;
-//    }
-//
-//    public boolean isAxe() {
-//        return axe;
-//    }
-//
-//    public void setAxe(boolean axe) {
-//        this.axe = axe;
-//    }
+    public boolean isScroll() {
+        return scroll;
+    }
+
+    public void setScroll(boolean scroll) {
+        this.scroll = scroll;
+    }
+
+    public boolean isAxe() {
+        return axe;
+    }
+
+    public void setAxe(boolean axe) {
+        this.axe = axe;
+    }
+
+    public boolean isChest() {
+        return chest;
+    }
+
+    public void setChest(boolean chest) {
+        this.chest = chest;
+    }
+
+    public boolean isKey() {
+        return key;
+    }
+
+    public void setKey(boolean key) {
+        this.key = key;
+    }
+
+    public boolean isSword() {
+        return sword;
+    }
+
+    public void setSword(boolean sword) {
+        this.sword = sword;
+    }
+
+    public boolean isRope() {
+        return rope;
+    }
+
+    public void setRope(boolean rope) {
+        this.rope = rope;
+    }
+
+    public boolean isStone() {
+        return stone;
+    }
+
+    public void setStone(boolean stone) {
+        this.stone = stone;
+    }
+
 }
