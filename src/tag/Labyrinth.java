@@ -13,18 +13,6 @@ import java.util.ArrayList;
  */
 public class Labyrinth {
 
-//    // Adgang til lukkede rum når de er true
-//    private boolean scrollUsed = false;
-//    private boolean axeUsed = false;
-//    private boolean chestUsed = false;
-//    private boolean keyUsed = false;
-//    private boolean swordUsed = false;
-//    private boolean ropeUsed = false;
-//    private boolean stoneUsed = false;
-//    
-//    //Fjender bekæmpet
-//    private boolean bossNotDefeted = true;
-//    private boolean miniBossNotDefeted = true;
     Room room;
     Enemy enemy;
 
@@ -118,10 +106,10 @@ public class Labyrinth {
         B6.setWest(null);
         B6.setSouth(C6);
 
-        //Boss er synlig eller ej
-        if (E1.isMiniBossNotDefeted() == true) {
-            E1.setEnemy(miniBoss);
-        }
+//        //Boss er synlig eller ej
+//        if (E1.isMiniBossNotDefeted() == true) {
+//            E1.setEnemy(miniBoss);
+//        }
         C2.setNorth(null);
         C2.setWest(null);
         C2.setSouth(null);
@@ -174,10 +162,10 @@ public class Labyrinth {
         D6.setNorth(C6);
         D6.setSouth(E6);
 
-        //Boss er synlig eller ej
-        if (E1.isBossNotDefeted() == true) {
-            E1.setEnemy(boss);
-        }
+//        //Boss er synlig eller ej
+//        if (E1.isBossNotDefeted() == true) {
+//            E1.setEnemy(boss);
+//        }
         E1.setWest(null);
         E1.setNorth(null);
         E1.setSouth(null);
@@ -257,6 +245,26 @@ public class Labyrinth {
         Room C6 = rooms.get(12);
         Room D6 = rooms.get(17);
         C6.setSouth(D6);
+    }
+
+    // Spiller får forbindelse til south room hvis han bruger axe
+    void setRoomRelationBoss() {
+        Room E1 = rooms.get(18);
+        if (boss.getHealth() <= 0) {
+
+        } else {
+            E1.setEnemy(boss);
+        }
+    }
+
+    // Spiller får forbindelse til south room hvis han bruger axe
+    void setRoomRelationMiniBoss() {
+        Room C2 = rooms.get(8);
+        if (boss.getHealth() <= 0) {
+
+        } else {
+            C2.setEnemy(boss);
+        }
     }
 
 }

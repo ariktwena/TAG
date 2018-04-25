@@ -18,18 +18,8 @@ public class Room {
     private Room west;
     private Room east;
 
-// Adgang til lukkede rum når de er true
-    public static boolean scroll = false;
-    private boolean axe = false;
-    private boolean chest = false;
-    private boolean key = false;
-    private boolean sword = false;
-    private boolean rope = false;
-    private boolean stone = false;
-    
-    //    //Fjender bekæmpet
-    private boolean bossNotDefeted = true;
-    private boolean miniBossNotDefeted = true;
+
+
 
     Item item;
     Enemy enemy;
@@ -91,62 +81,6 @@ public class Room {
         item = null;
     }
 
-    public boolean isScroll() {
-        return scroll;
-    }
-
-    public void setScroll(boolean scroll) {
-        this.scroll = scroll;
-    }
-
-    public boolean isAxe() {
-        return axe;
-    }
-
-    public void setAxe(boolean axe) {
-        this.axe = axe;
-    }
-
-    public boolean isChest() {
-        return chest;
-    }
-
-    public void setChest(boolean chest) {
-        this.chest = chest;
-    }
-
-    public boolean isKey() {
-        return key;
-    }
-
-    public void setKey(boolean key) {
-        this.key = key;
-    }
-
-    public boolean isSword() {
-        return sword;
-    }
-
-    public void setSword(boolean sword) {
-        this.sword = sword;
-    }
-
-    public boolean isRope() {
-        return rope;
-    }
-
-    public void setRope(boolean rope) {
-        this.rope = rope;
-    }
-
-    public boolean isStone() {
-        return stone;
-    }
-
-    public void setStone(boolean stone) {
-        this.stone = stone;
-    }
-
     public Enemy getEnemy() {
         return enemy;
     }
@@ -155,21 +89,6 @@ public class Room {
         this.enemy = enemy;
     }
 
-    public boolean isBossNotDefeted() {
-        return bossNotDefeted;
-    }
-
-    public void setBossNotDefeted(boolean bossNotDefeted) {
-        this.bossNotDefeted = bossNotDefeted;
-    }
-
-    public boolean isMiniBossNotDefeted() {
-        return miniBossNotDefeted;
-    }
-
-    public void setMiniBossNotDefeted(boolean miniBossNotDefeted) {
-        this.miniBossNotDefeted = miniBossNotDefeted;
-    }
     
     
 
