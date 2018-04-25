@@ -181,15 +181,6 @@ public class Controller {
         }
     }
 
-//        public ArrayList<String> getEquipOptions(Player player) {
-//        ArrayList<String> getEquipOptions = new ArrayList();
-//        int x = 1;
-//            for (int i = 0; i < player.getBackpack().size(); i++) {
-//                getEquipOptions.add("Press " + x + " equipe " + player.getBackpack().get(i).getItemName()); 
-//                x++;
-//            }
-//        return getEquipOptions;
-//    }
     // Arraylist med de mulige veje man kan bevæge sig i spillet i et givent rum
     public ArrayList<String> getBackPackItems(ArrayList Backpack) {
         ArrayList<String> itemsInBackPack = new ArrayList();
@@ -213,31 +204,69 @@ public class Controller {
                 return itemName;
             }
         }
-        return tui.chooseOtherOptionItem();
+        return itemName = "Exit";
     }
 
     // Hvad sker der når en spiller vælger et item
     public void itemControl(String itemName) throws InterruptedException {
         switch (itemName) {
             case "Scroll":
+                if(player.getCurrentRoom() == labyrinth.roomList().get(10)){
                 //Spiller kan kun komme igennem hvis de har en Scroll
                 labyrinth.setRoomRelationScroll();
-
-                tui.printScroolUsage();
+                tui.printScroolUsage();   
+                }
+                else{
+                tui.printErrorMassage();
+                }
 
                 break;
             case "Axe":
-                //        Spiller kan kun komme igennem hvis de har en Axe
+                if(player.getCurrentRoom() == labyrinth.roomList().get(12)){
                 labyrinth.setRoomRelationAxe();
-//                player.setCurrentRoom(player.getCurrentRoom().getNorth());
-//                tui.transitText();
-//                tui.printDescription(player.getCurrentRoom().getDescription());
-//                if (player.getCurrentRoom().getItem() != null) {
-//                    tui.printDescription(player.getCurrentRoom().getItem().getItemDescripton());
-//                }
+                }
+                else{
+                tui.printErrorMassage();
+                }
+                break;
+            case "Stone":
+                if(player.getCurrentRoom() == labyrinth.roomList().get(16)){
+                tui.printKeyUsage();
+                labyrinth.setRoomRelationKey();
+                }
+                else{
+                tui.printErrorMassage();
+                }
+                break;
+            case "Rope":
+                if(player.getCurrentRoom() == labyrinth.roomList().get(16)){
+                tui.printSwordUsage();
+                labyrinth.setRoomRelationSword();
+                }
+                else{
+                tui.printErrorMassage();
+                }
+                break;
+            case "Sword":
+                if(player.getCurrentRoom() == labyrinth.roomList().get(8) || player.getCurrentRoom() == labyrinth.roomList().get(18)){
+               
+                }
+                else{
+                tui.printErrorMassage();
+                }
+
+                break;
+            case "Key":
+                if(player.getCurrentRoom() == labyrinth.roomList().get(15)){
+                
+                }
+                else{
+                tui.printErrorMassage();
+                }
+                
+
                 break;
             case "Exit":
-
                 break;
 
         }

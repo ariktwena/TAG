@@ -19,10 +19,12 @@ public class Labyrinth {
     private ArrayList<Room> rooms = new ArrayList();
 
     // Items i spillet
-    Item scroll = new Item("Scroll", "Magic scroll\n"); //Skal uddybes
+    Item scroll = new Tool("Scroll", "Magic scroll\n", 10); //Skal uddybes
     Item axe = new Tool("Axe", "Hard Axe\n", 20);
-    Item chest = new Item("Chest", "Big chest\n");
-    Item stone = new Tool("Stone", "Big Stone\n", 20);
+    Item chest = new StaticItem("Chest", "Big chest\n");
+    Item well = new StaticItem("Well", "Big well\n");
+    Item vase = new StaticItem("Vase", "Big vase\n");
+    Item stone = new Tool("Stone", "Big Stone\n", 10);
     Item rope = new Tool("Rope", "Long rope\n", 10);
     Item sword = new Tool("Sword", "Long sword\n", 20);
     Item key = new Tool("Key", "Small key\n", 10);
@@ -151,7 +153,7 @@ public class Labyrinth {
         D4.setNorth(C4);
         D4.setWest(D3);
 
-        D5.setItem(key);
+        
         D5.setEast(null);
         D5.setSouth(null);
         D5.setWest(null);
@@ -265,6 +267,17 @@ public class Labyrinth {
         } else {
             C2.setEnemy(boss);
         }
+    }
+    
+      // Spiller får forbindelse til south room hvis han bruger axe
+    void setRoomRelationKey() {
+        Room D5 = rooms.get(15);
+        D5.setItem(key);
+        
+    }
+
+    void setRoomRelationSword() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

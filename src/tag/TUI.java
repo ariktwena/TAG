@@ -52,11 +52,11 @@ public class TUI {
     void chooseOtherOption() {
         System.out.println("Please choose the right option");
     }
-
-    public String chooseOtherOptionItem() {
-        String x;
-        return x = "Please choose the right option";
-    }
+//
+//    public String chooseOtherOptionItem() {
+//        String x;
+//        return x = "Please choose the right option";
+//    }
 
     void printBackpack(String backpacItems) {
         System.out.println(backpacItems);
@@ -119,6 +119,18 @@ public class TUI {
 
     void printScroolUsage() {
         System.out.println("Your read the words from the scroll out loud.\n You hear the cave is shifting around ant the scroll vanishes in the air.");
+    }
+
+    void printKeyUsage() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void printSwordUsage() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void printErrorMassage() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
