@@ -25,9 +25,9 @@ public class TUI {
 
     // Spiller kan skrive sit navn
     public String nameInput() throws InterruptedException {
-        System.out.print("\nWhat is your name? ");
+        System.out.print("\nEnter your name: ");
         String name = scanner.next();
-        System.out.println("\nWelcome " + name + " to the text adventure of Arkham Asylum!");
+        System.out.println("\nWelcome " + name + " to The Forgotten Cave: A Text Adventger Game!");
         Thread.sleep(1000);
         return name;
     }
@@ -51,6 +51,11 @@ public class TUI {
 
     void chooseOtherOption() {
         System.out.println("Please choose the right option");
+    }
+
+    public String chooseOtherOptionItem() {
+        String x;
+        return x = "Please choose the right option";
     }
 
     void printBackpack(String backpacItems) {
@@ -105,13 +110,15 @@ public class TUI {
     void whatToUse() {
         System.out.println("What do you want to use?");
     }
-    
-        void printBackpackUseOptions(ArrayList<String> backpacItems) {
-            for (String backpacItem : backpacItems) {
-                System.out.println(backpacItem);
-            }
+
+    void printBackpackUseOptions(ArrayList<String> backpacItems) {
+        for (String backpacItem : backpacItems) {
+            System.out.println(backpacItem);
+        }
     }
-   
-    
+
+    void printScroolUsage() {
+        System.out.println("Your read the words from the scroll out loud.\n You hear the cave is shifting around ant the scroll vanishes in the air.");
+    }
 
 }

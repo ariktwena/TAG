@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author Tweny
  */
 public class Labyrinth {
-    
+
 //    // Adgang til lukkede rum når de er true
 //    private boolean scrollUsed = false;
 //    private boolean axeUsed = false;
@@ -25,7 +25,6 @@ public class Labyrinth {
 //    //Fjender bekæmpet
 //    private boolean bossNotDefeted = true;
 //    private boolean miniBossNotDefeted = true;
-    
     Room room;
     Enemy enemy;
 
@@ -39,10 +38,10 @@ public class Labyrinth {
     Item rope = new Tool("Rope", "Long rope\n", 10);
     Item sword = new Tool("Sword", "Long sword\n", 20);
     Item key = new Tool("Key", "Small key\n", 10);
-    
+
     //Fjender i spillet 
-    Enemy boss = new Boss ("Big Boss", 20, 200);
-    Enemy miniBoss = new MiniBoss ("The Gatekeeper", 10, 100);
+    Enemy boss = new Boss("Big Boss", 20, 200);
+    Enemy miniBoss = new MiniBoss("The Gatekeeper", 10, 100);
 
     // Vi optter vores rum og de veje man kan gå, samt indsætter dem i et array
     public void createRooms() {
@@ -121,7 +120,7 @@ public class Labyrinth {
 
         //Boss er synlig eller ej
         if (E1.isMiniBossNotDefeted() == true) {
-        E1.setEnemy(miniBoss);
+            E1.setEnemy(miniBoss);
         }
         C2.setNorth(null);
         C2.setWest(null);
@@ -136,10 +135,7 @@ public class Labyrinth {
 
         C4.setNorth(B4);
         C4.setWest(C3);
-         //Spiller kan kun komme igennem hvis de har en Scroll
-        if (Room.scroll == true) {
-            C4.setSouth(D4);
-        }
+
         C4.setEast(C5);
 
         C5.setNorth(B5);
@@ -150,10 +146,6 @@ public class Labyrinth {
         C6.setEast(null);
         C6.setNorth(B6);
         C6.setWest(C5);
-//        Spiller kan kun komme igennem hvis de har en Axe
-        if (C6.isAxe() == true) {
-            C6.setSouth(D6);
-        }
 
         D2.setItem(sword);
         D2.setNorth(null);
@@ -184,7 +176,7 @@ public class Labyrinth {
 
         //Boss er synlig eller ej
         if (E1.isBossNotDefeted() == true) {
-        E1.setEnemy(boss);
+            E1.setEnemy(boss);
         }
         E1.setWest(null);
         E1.setNorth(null);
@@ -237,10 +229,10 @@ public class Labyrinth {
         rooms.add(E6);
 
     }
-    
-public ArrayList<Room> roomList(){
-    return this.rooms;
-}
+
+    public ArrayList<Room> roomList() {
+        return this.rooms;
+    }
 
 // Opretter et startrum
     public Room startRoom(String roomName) {
@@ -252,7 +244,19 @@ public ArrayList<Room> roomList(){
         }
         return null;
     }
-    
-  
+
+// Spiller får forbindelse til south room hvis han bruger scrool
+    void setRoomRelationScroll() {
+        Room C4 = rooms.get(10);
+        Room D4 = rooms.get(15);
+        C4.setSouth(D4);
+    }
+
+    // Spiller får forbindelse til south room hvis han bruger axe
+    void setRoomRelationAxe() {
+        Room C6 = rooms.get(12);
+        Room D6 = rooms.get(17);
+        C6.setSouth(D6);
+    }
 
 }

@@ -198,7 +198,7 @@ public class Controller {
             itemsInBackPack.add("Press " + x + " to use " + player.getBackpack().get(i).getItemName());
             x++;
         }
-        itemsInBackPack.add("Press 9" + " to use nothing and continue.");
+        itemsInBackPack.add("Press 9" + " to return.");
         return itemsInBackPack;
     }
 
@@ -213,19 +213,22 @@ public class Controller {
                 return itemName;
             }
         }
-        return itemName = "Exit";
+        return tui.chooseOtherOptionItem();
     }
 
     // Hvad sker der når en spiller vælger et item
     public void itemControl(String itemName) throws InterruptedException {
         switch (itemName) {
             case "Scroll":
-                // Sætte scroll til true
+                //Spiller kan kun komme igennem hvis de har en Scroll
+                labyrinth.setRoomRelationScroll();
 
-                Room.scroll = true;
+                tui.printScroolUsage();
 
                 break;
             case "Axe":
+                //        Spiller kan kun komme igennem hvis de har en Axe
+                labyrinth.setRoomRelationAxe();
 //                player.setCurrentRoom(player.getCurrentRoom().getNorth());
 //                tui.transitText();
 //                tui.printDescription(player.getCurrentRoom().getDescription());
